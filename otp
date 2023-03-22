@@ -1,0 +1,16 @@
+$api_key = '46418436920EB8';
+$contacts = '9950944901';
+$from = 'DOLPNE';
+$otp = rand(0000,9999);
+$msg = "Your one-time password (OTP) is ".$otp." -SCIPL-dolphin";
+// dd($msg);
+$sms_text = urlencode($msg);
+// $pe_id = '1201166271366911105';
+$template_id = '1707167784610389156';
+
+$api_url = "http://sms.afgoparrot.com/app/smsapi/index.php?key=".$api_key."&campaign=15196&routeid=101011&type=text&contacts=".$contacts."&senderid=".$from."&msg=".$sms_text."&template_id=".$template_id;
+
+//Submit to server
+
+$response = file_get_contents( $api_url);
+echo $response;
